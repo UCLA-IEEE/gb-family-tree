@@ -1,4 +1,4 @@
-function createGraph(groups, year) {
+function createGraph(groups, start, end) {
     var res = {}
     res.nodes = []
     res.edges = []
@@ -6,11 +6,8 @@ function createGraph(groups, year) {
     var nodes = {}
     var counter = 0
 
-    console.log(groups)
-
     groups.forEach(group => {
-        if (year !== 'all' && group.year !== year) {
-            console.log(group.year + ' did not match ' + year);
+        if (!(start <= group.year && group.year <= end)) {
             return
         }
         

@@ -5,6 +5,8 @@
 
   <script type="text/javascript" src="/js/vis.min.js"></script>
   <link href="/css/vis.min.css" rel="stylesheet" type="text/css" />
+  <link href="/css/index.css" rel="stylesheet" type="text/css" />
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 
   <!-- JQUERY -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -21,14 +23,29 @@
 </head>
 <body>
 
-  <select id="year-selector">
-    <option value="all">All</option>
-    <option value="2019">2019</option>
-    <option value="2018">2018</option>
-    <option value="2017">2017</option>
-    <option value="2016">2016</option>
-    <option value="2015">2015</option>
-  </select>
+  <div class="main-body">
+    <p>Select your start and end years (inclusive):</p>
+
+    Start:
+    <select id="start-year-selector">
+      <option value="2019">2019</option>
+      <option value="2018">2018</option>
+      <option value="2017">2017</option>
+      <option value="2016">2016</option>
+      <option value="2015">2015</option>
+      <option value="all">All</option>
+    </select>
+
+    End:
+    <select id="end-year-selector">
+      <option value="2019">2019</option>
+      <option value="2018">2018</option>
+      <option value="2017">2017</option>
+      <option value="2016">2016</option>
+      <option value="2015">2015</option>
+      <option value="all">All</option>
+    </select>
+  </div>
 <div id="mynetwork"></div>
 
 <script type="text/javascript" src="/js/secrets.js"></script>

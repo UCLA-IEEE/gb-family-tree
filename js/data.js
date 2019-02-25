@@ -22,7 +22,7 @@ function rowToGroup(row) {
     group.name = row[0]
     group.leads = [row[1]]
     if (row[2]) group.leads.push(row[2])
-    group.year = row[3]
+    group.year = parseInt(row[3])
     group.members = []
     for (var i=4; i < row.length; i++)
         group.members.push(row[i])

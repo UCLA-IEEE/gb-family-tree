@@ -1,10 +1,15 @@
-var year;
+var startYear;
+var endYear;
 
 const leadColor = 'purple'
 const memberColor = 'orange'
 
 $(document).ready(() => {
-    year = 'all'
+    var container = document.getElementById('mynetwork')
+    container.innerHTML = '<p>Loading...</p>'
+
+    startYear = 2019
+    endYear = 2019
 
     $.ajax({
         // eslint-disable-next-line
@@ -18,14 +23,23 @@ $(document).ready(() => {
             if (group) groups.push(group)
         })
 
-        var graph = createGraph(groups, year)
+        var graph = createGraph(groups, startYear, endYear)
         updateGraph(graph)    
     })
 
+    $('#start-year-selector').change(function() {
+        startYear = $(this).val()
+        if (startYear === 'all') startYear = 0
+        else startYear = parseInt(startYear)
+        var graph = createGraph(groups, startYear, endYear)
+        updateGraph(graph)
+    });
 
-    $('#year-selector').change(function() {
-        year = $(this).val()
-        var graph = createGraph(groups, year)
+    $('#end-year-selector').change(function() {
+        endYear = $(this).val()
+        if (endYear === 'all') endYear = 10000
+        else endYear = parseInt(endYear)
+        var graph = createGraph(groups, startYear, endYear)
         updateGraph(graph)
     });
 });
@@ -43,16 +57,16 @@ function updateGraph(graph) {
     var container = document.getElementById('mynetwork');
     var options = {
         nodes: {
-        font: {
-            size: 16,
-            face: 'helvetica'
-        }
+            font: {
+                size: 16,
+                face: 'helvetica'
+            }
         },
         edges:{
-        color: {
-            inherit: false,
-        },
-        width: 3
+            color: {
+                inherit: false,
+            },
+            width: 3
         }
     };
 
