@@ -15,8 +15,7 @@ $(document).ready(() => {
 
         res.values.forEach(row => {
             var group = rowToGroup(row)
-            console.log(group)
-            groups.push(group)
+            if (group) groups.push(group)
         })
 
         var graph = createGraph(groups, year)
