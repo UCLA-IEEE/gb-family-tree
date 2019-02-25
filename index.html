@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+  <title>GB Family Tree</title>
+
+  <script type="text/javascript" src="/js/vis.min.js"></script>
+  <link href="/css/vis.min.css" rel="stylesheet" type="text/css" />
+
+  <!-- JQUERY -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <style type="text/css">
+    #mynetwork {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <select id="year-selector">
+    <option value="all">All</option>
+    <option value="2019">2019</option>
+    <option value="2018">2018</option>
+  </select>
+<div id="mynetwork"></div>
+
+<script type="text/javascript" src="/js/data.js"></script>
+<script type="text/javascript" src="/js/graph.js"></script>
+<script type="text/javascript" src="/js/index.js"></script>
+
+</body>
+</html>
