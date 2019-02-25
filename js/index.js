@@ -6,15 +6,29 @@ const memberColor = 'orange'
 $(document).ready(() => {
     year = 'all'
 
-    var graph = createGraph(groups, year)
-    updateGraph(graph)
+    $.ajax({
+        // eslint-disable-next-line
+        url: API_BASE_URL + SPREADSHEET_ID + API_OPTIONS + API_KEY,
+        type: 'GET'
+    }).then(function(res) {
+        console.log(res)
+
+        res.values.forEach(row => {
+            var group = rowToGroup(row)
+            console.log(group)
+            groups.push(group)
+        })
+
+        var graph = createGraph(groups, year)
+        updateGraph(graph)    
+    })
+
 
     $('#year-selector').change(function() {
         year = $(this).val()
         var graph = createGraph(groups, year)
         updateGraph(graph)
     });
-  
 });
 
 function updateGraph(graph) {
