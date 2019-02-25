@@ -1,4 +1,5 @@
 .DS_Store
 secrets.js
 cgi_bin
+node_modules/
 
