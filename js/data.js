@@ -13,7 +13,7 @@ function rowToGroup(row) {
     
     console.log('convert ' + row)
 
-    if (!row[0] || !row[2] || !row[3] || !row[4]) {
+    if (!row[0] || !row[1] || !row[3] || !row[4]) {
         return null
     }
 
