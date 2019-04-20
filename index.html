@@ -1,57 +1,58 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-  <title>GB Family Tree</title>
+	<title>GB Family Tree</title>
+	<meta lang="en" />
 
-  <script type="text/javascript" src="/js/vis.min.js"></script>
-  <link href="/css/vis.min.css" rel="stylesheet" type="text/css" />
-  <link href="/css/index.css" rel="stylesheet" type="text/css" />
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<!-- VISJS -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" />
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
 
-  <!-- JQUERY -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- BOOTSTRAP -->
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 
-  <style type="text/css">
-    #mynetwork {
-      width: 100%;
-      height: 100%;
-      position: fixed;
-      margin: 0;
-      padding: 0;
-    }
-  </style>
+	<!-- JQUERY -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!-- STYLESHEETS -->
+	<link href="/css/index.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+	<div class="main-body">
+		Start:
+		<select id="start-year-selector">
+		<option value="2019">2019</option>
+		<option value="2018">2018</option>
+		<option value="2017">2017</option>
+		<option value="2016">2016</option>
+		<option value="2015">2015</option>
+		<option value="all">All</option>
+		</select>
 
-  <div class="main-body">
-    Start:
-    <select id="start-year-selector">
-      <option value="2019">2019</option>
-      <option value="2018">2018</option>
-      <option value="2017">2017</option>
-      <option value="2016">2016</option>
-      <option value="2015">2015</option>
-      <option value="all">All</option>
-    </select>
+		End:
+		<select id="end-year-selector">
+        <option value="2019">2019</option>
+        <option value="2018">2018</option>
+        <option value="2017">2017</option>
+        <option value="2016">2016</option>
+        <option value="2015">2015</option>
+        <option value="all">All</option>
+      </select>
 
-    End:
-    <select id="end-year-selector">
-      <option value="2019">2019</option>
-      <option value="2018">2018</option>
-      <option value="2017">2017</option>
-      <option value="2016">2016</option>
-      <option value="2015">2015</option>
-      <option value="all">All</option>
-    </select>
+		Select your start and end years (inclusive). Note that if you select
+		multiple years, the graph can take quite long to load.
+	</div>
+	<div id="mynetwork"></div>
 
-    Select your start and end years (inclusive). Note that if you select multiple years, the graph can take quite long to load.
-  </div>
-<div id="mynetwork"></div>
+	<p>I also worked hard on arranging everyone in a hierarchy and wanted to share:</p>
+	<div id="hierarchical-network"></div>
 
-<script type="text/javascript" src="/js/secrets.js"></script>
-<script type="text/javascript" src="/js/data.js"></script>
-<script type="text/javascript" src="/js/graph.js"></script>
-<script type="text/javascript" src="/js/index.js"></script>
+	<script type="text/javascript" src="/js/secrets.js"></script>
+	<script type="text/javascript" src="/js/data.js"></script>
 
+	<script type="text/javascript" src="/js/graph.js"></script>
+	<script type="text/javascript" src="/js/index.js"></script>
+
+	<script type="text/javascript" src="/js/tree.js"></script>
 </body>
 </html>
