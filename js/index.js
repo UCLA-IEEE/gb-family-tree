@@ -24,7 +24,7 @@ $(document).ready(() => {
         })
 
         var graph = createGraph(groups, startYear, endYear)
-        updateGraph(graph)    
+        updateGraph(graph)
     })
 
     $('#start-year-selector').change(function() {
@@ -67,7 +67,8 @@ function updateGraph(graph) {
                 inherit: false,
             },
             width: 3
-        }
+        },
+        clickToUse: true
     };
 
     new vis.Network(container, data, options);

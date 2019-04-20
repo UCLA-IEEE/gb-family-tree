@@ -3,6 +3,8 @@
 <head>
 	<title>GB Family Tree</title>
 	<meta lang="en" />
+	<meta charset='utf-8' />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 	<!-- VISJS -->
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" />
@@ -19,6 +21,14 @@
 </head>
 <body>
 	<div class="main-body">
+		<h1>IEEE General Board</h1>
+
+		<p>
+			These visuals are interactive! Zoom in and hour, click on nodes, try and drag them! Just make sure to <b>CLICK</b> on the visuals
+			first before interacting. This was enabled to make the experience a little more smooth.
+		</p>
+
+		<h2>Cluster View</h2>
 		Start:
 		<select id="start-year-selector">
 		<option value="2019">2019</option>
@@ -41,12 +51,15 @@
 
 		Select your start and end years (inclusive). Note that if you select
 		multiple years, the graph can take quite long to load.
-	</div>
-	<div id="mynetwork"></div>
+		<div id="mynetwork"></div>
 
-	<p>I also worked hard on arranging everyone in a hierarchy and wanted to share:</p>
-	Type someone's name to focus on them: <input type='text' />
-	<div id="hierarchical-network"></div>
+		<h2>Hierarchical View</h2>
+		Type someone's name to focus on them: <input type='text' />
+		<div id="hierarchical-network"></div>
+
+		<h1>Statistics</h1>
+		<p>There have been <span id="num-students"></span> students involved with GB in its history!</p>
+	</div>
 
 	<script type="text/javascript" src="/js/secrets.js"></script>
 	<script type="text/javascript" src="/js/data.js"></script>
@@ -54,6 +67,6 @@
 	<script type="text/javascript" src="/js/graph.js"></script>
 	<script type="text/javascript" src="/js/index.js"></script>
 
-	<script type="text/javascript" src="/js/tree.js"></script>
+	<script type="text/javascript" src="/js/hierarchy.js"></script>
 </body>
 </html>

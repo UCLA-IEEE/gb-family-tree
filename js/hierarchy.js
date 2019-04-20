@@ -67,6 +67,9 @@ function createNodes(rows) {
     });
   }
 
+  // Inject number of nodes into statistics HTML
+  $("#num-students").html(nodeList.length)
+
   return nodeList;
 }
 
@@ -118,6 +121,7 @@ $.ajax({
   var options = {
     physics: { enabled: false },
     interaction: { dragNodes: false },
+    clickToUse: true,
     edges: {
       color: {
         color: "#00629b"
@@ -127,6 +131,7 @@ $.ajax({
       hierarchical: {
         enabled: true,
         levelSeparation: 300,
+        nodeSpacing: 150,
         treeSpacing: 0
       }
     }
