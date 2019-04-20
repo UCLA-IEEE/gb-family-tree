@@ -133,4 +133,22 @@ $.ajax({
   };
 
   var network = new vis.Network(container, data, options);
+
+  // Listens to the input element and tries to focus on a specific node
+  $("input").keyup(function(e) {
+    let name = e.target.value;
+
+    focusOptions = {
+      scale: 1.0,
+      animation: {
+        duration: 1000,
+        easingFunction: "easeInOutQuad"
+      }
+    };
+
+    matchingNodes = nodeList.filter(p => p.label == name)
+    if (matchingNodes.length > 0) {
+        network.focus(name, focusOptions);
+    }
+  });
 });
