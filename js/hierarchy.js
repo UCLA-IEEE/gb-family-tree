@@ -1,8 +1,8 @@
 const LeadOffset = 1;
-const MaxGBLeads = 2;
+const MaxGBLeads = 3;
 
-const MemberOffset = 4;
-const MaxGBMembers = 6;
+const MemberOffset = 5;
+const MaxGBMembers = 8;
 
 const YearRowLength = 2;
 

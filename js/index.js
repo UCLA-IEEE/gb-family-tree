@@ -8,8 +8,8 @@ $(document).ready(() => {
     var container = document.getElementById('mynetwork')
     container.innerHTML = '<p>Loading...</p>'
 
-    startYear = 2019
-    endYear = 2019
+    startYear = 2021
+    endYear = 2021
 
     $.ajax({
         // eslint-disable-next-line
